@@ -1,0 +1,171 @@
+/* General Image Styling */
+img {
+    width: 60vw; 
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Grid Container Images (Study Spaces & Advising Pages) */
+.grid-container img {
+    width: 40vw; 
+}
+
+/* Flex Container Images (Index & Tutoring Pages) */
+.flex-container img {
+    width: 50vw; 
+}
+
+/* Small Images (Logos, Icons, etc.) */
+.small-img {
+    width: 40vw;
+}
+
+/* Footer Images (Logos) */
+footer img {
+    width: 40vw;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Skip to Main Content */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #ffcb05;
+    color: #00274c;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: top 0.3s ease-in-out;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Header */
+header {
+    background: #00274c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+nav {
+    background: #00274c; /* Keeps nav background consistent */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #ffcb05;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: transparent; /* Default background */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Active Page Styling - Adds background color behind the selected nav link */
+nav ul li a.active {
+    background: #ffcb05;
+    color: #00274c;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    background: rgba(255, 203, 5, 0.7);
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Layout for Study Spaces & Advising Pages */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-container section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox Layout for Index & Tutoring Pages */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background: #00274c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Mobile-First Design */
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    .flex-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* Accessibility - Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
