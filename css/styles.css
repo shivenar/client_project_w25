@@ -141,14 +141,27 @@ main {
     padding: 20px;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
-    background: #00274c;
+    background: #00274c; /* Michigan Blue */
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 20px;
 }
+
+/* Style email link in footer */
+footer a {
+    color: #ffcb05; /* Maize (UM color) */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold;
+}
+
+/* Change color when hovering over email */
+footer a:hover {
+    color: #ffffff; /* White */
+    text-decoration: underline;
+}
+
 
 /* Mobile-First Design */
 @media (min-width: 768px) {
