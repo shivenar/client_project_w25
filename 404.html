@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="html5reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <header>
+        <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="study_spaces.html">Study Spaces</a></li>
+                <li><a href="advising.html">Advising</a></li>
+                <li><a href="tutoring.html">Tutoring</a></li>
+            </ul>
+        </nav>
+        <h1>Oops! Page Not Found</h1>
+    </header>
+
+    <main id="main-content" class="flex-container">
+        <section>
+            <h2>404 - Uh oh! This page doesn't exist.</h2>
+            <p>It looks like you followed a broken link or typed a URL that doesn't exist on this site.</p>
+            <p>No worries — even the best Wolverines sometimes take the scenic route 🐾</p>
+            <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo - you're still in the right place!">
+            <p><a href="index.html" style="display:inline-block; margin-top: 20px; background:#ffcb05; color:#00274c; padding: 10px 20px; border-radius: 5px; font-weight: bold;">Take Me Home</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> UMSI | 
+            <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">
+                UMSI Academic Advising
+            </a>
+        </p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="topBtn" title="Back to top">↑ Top</button>
+
+    <!-- Scripts -->
+    <script>
+        // Dynamic Footer Year
+        document.addEventListener("DOMContentLoaded", function () {
+            const yearSpan = document.getElementById("year");
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+
+        // Back to Top Button Logic
+        const topBtn = document.getElementById("topBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        };
+
+        topBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
