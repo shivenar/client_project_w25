@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Spaces at UMSI</title>
-    <link rel="stylesheet" href="css/html5reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="html5reset.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
         <h1>Study Spaces on Campus</h1>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="grid-container">
         <section>
             <h2>Libraries</h2>
             <p>Quiet and collaborative areas within the University Library system.</p>
@@ -40,9 +40,40 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 UMSI | <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">UMSI Academic Advising</a></p>
+        <p>&copy; <span id="year"></span> UMSI | 
+            <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">
+                UMSI Academic Advising
+            </a>
+        </p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="topBtn" title="Back to top">↑ Top</button>
+
+    <!-- Scripts -->
+    <script>
+        // Dynamic Footer Year
+        document.addEventListener("DOMContentLoaded", function () {
+            const yearSpan = document.getElementById("year");
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+
+        // Back to Top Button Logic
+        const topBtn = document.getElementById("topBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        };
+
+        topBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
-
