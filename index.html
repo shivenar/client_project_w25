@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Success Portal</title>
-    <link rel="stylesheet" href="css/html5reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="html5reset.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
         <h1>Student Success Portal</h1>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="flex-container">
         <section>
             <h2>Welcome to the UMSI Student Success Navigator</h2>
             <p>Your comprehensive guide to resources for thriving academically and personally at the University of Michigan School of Information.</p>
@@ -52,8 +52,69 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 UMSI | <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">UMSI Academic Advising</a></p>
+        <p>&copy; <span id="year"></span> UMSI | 
+            <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">
+                UMSI Academic Advising
+            </a>
+        </p>
     </footer>
+
+    <!-- Floating Help Button -->
+    <button id="helpBtn" class="help-badge">Need Help?</button>
+
+    <!-- Modal Structure -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Need Help?</h2>
+            <p>Feel free to reach out for any assistance related to UMSI resources!</p>
+            <p><strong>Email:</strong> <a href="mailto:shivenar@umich.edu">shivenar@umich.edu</a></p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="topBtn" title="Back to top">↑ Top</button>
+
+    <!-- Scripts -->
+    <script>
+        // Dynamic Footer Year
+        document.addEventListener("DOMContentLoaded", function () {
+            const yearSpan = document.getElementById("year");
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+
+        // Back to Top Button Logic
+        const topBtn = document.getElementById("topBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        };
+        topBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Modal Logic
+        const helpBtn = document.getElementById("helpBtn");
+        const helpModal = document.getElementById("helpModal");
+        const closeModal = document.getElementById("closeModal");
+
+        helpBtn.onclick = () => {
+            helpModal.style.display = "block";
+        };
+        closeModal.onclick = () => {
+            helpModal.style.display = "none";
+        };
+        window.onclick = (e) => {
+            if (e.target === helpModal) {
+                helpModal.style.display = "none";
+            }
+        };
+    </script>
 
 </body>
 </html>
