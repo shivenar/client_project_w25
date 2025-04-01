@@ -49,6 +49,16 @@
                 </li>
             </ul>
         </section>
+
+        <!-- ✅ Modal is now inside landmark with accessibility attributes -->
+        <div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal" aria-label="Close help modal">&times;</span>
+                <h2 id="helpTitle">Need Help?</h2>
+                <p>Feel free to reach out for any assistance related to UMSI resources!</p>
+                <p><strong>Email:</strong> <a href="mailto:shivenar@umich.edu">shivenar@umich.edu</a></p>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -61,16 +71,6 @@
 
     <!-- Floating Help Button -->
     <button id="helpBtn" class="help-badge">Need Help?</button>
-
-    <!-- Modal Structure -->
-    <div id="helpModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h2>Need Help?</h2>
-            <p>Feel free to reach out for any assistance related to UMSI resources!</p>
-            <p><strong>Email:</strong> <a href="mailto:shivenar@umich.edu">shivenar@umich.edu</a></p>
-        </div>
-    </div>
 
     <!-- Back to Top Button -->
     <button id="topBtn" title="Back to top">↑ Top</button>
@@ -118,4 +118,3 @@
 
 </body>
 </html>
-
